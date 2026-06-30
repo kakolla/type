@@ -1,6 +1,9 @@
 use macroquad::prelude::*;
 use macroquad::input;
-use macroquad::input::KeyCode;
+
+
+mod input_utils;
+use input_utils::input_utils::resolve_key;
 
 #[macroquad::main("Type")]
 async fn main() {
@@ -29,21 +32,4 @@ async fn main() {
     }
 }
 
-pub fn resolve_key(key: &KeyCode) -> String {
-    match key {
-        KeyCode::A => {
-            "A".to_string()
-        },
-        KeyCode::B => {
-            "B".to_string()
-        },
-        _ => {
-            "NA".to_string()
-        }
 
-    }
-
-
-
-
-}
